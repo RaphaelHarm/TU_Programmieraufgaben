@@ -1,0 +1,12 @@
+name: evc_env
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.14
+  - pip
+  - pip:
+    - scipy==1.17.1
+    - matplotlib==3.10.8
+    - pyqt6==6.10.2
+    - ipykernel==7.2.0
