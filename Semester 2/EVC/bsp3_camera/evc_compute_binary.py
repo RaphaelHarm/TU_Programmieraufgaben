@@ -24,7 +24,7 @@ def evc_compute_binary(input_image: np.ndarray, x: float, top: int) -> np.ndarra
 
 
     result = np.copy(input_image)
-    result = (result > x) ^ (x == 0)
+    result = ((result > x) ^ (top == 0)).astype(np.float32)
 
 
     ### END STUDENT CODE

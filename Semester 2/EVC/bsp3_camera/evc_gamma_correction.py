@@ -26,11 +26,11 @@ def evc_compute_brightness(input_image: np.ndarray) -> np.ndarray:
     """
     ### STUDENT CODE
 
-    mb = np.max(input_image)
-    if mb == 0:
-        mb = 1e-10
-    brightness = np.copy(input_image)
-    brightness /= mb
+    mb = np.max(input_image, axis=2)
+    mb_nz = np.where(mb == 0, 1e-10, mb)
+    mb_nz = mb_nz[:, :, np.newaxis]
+
+    brightness = input_image / mb_nz
     brightness = rgb2gray(brightness)
     brightness *= mb
 
@@ -58,8 +58,7 @@ def evc_compute_chromaticity(
 
     brightness = np.where(brightness == 0, 1e-10, brightness)
     brightness = brightness[:, :, np.newaxis]
-    chromaticity = np.copy(input_image)
-    chromaticity /= brightness
+    chromaticity = input_image / brightness
 
     ### END STUDENT CODE
 
@@ -83,8 +82,7 @@ def evc_gamma_correct(input_image: np.ndarray, gamma: float) -> np.ndarray:
     if gamma == 0:
         gamma = 1e-10
 
-    corrected = np.copy(input_image)
-    corrected **= 1 / gamma
+    corrected = input_image ** (1 / gamma)
 
     ### END STUDENT CODE
 
@@ -107,9 +105,8 @@ def evc_reconstruct(
     """
     ### STUDENT CODE
 
-    result = np.copy(chromaticity)
     brightness_corrected = brightness_corrected[:, :, np.newaxis]
-    result *= brightness_corrected
+    result = chromaticity * brightness_corrected
 
     ### END STUDENT CODE
 
