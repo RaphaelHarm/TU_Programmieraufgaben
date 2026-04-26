@@ -1,8 +1,6 @@
 import exercise.StudentSolutionForExercise;
 import exercise.SymmetricGroup;
-
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import exercise.StudentInformation;
@@ -11,7 +9,7 @@ import exercise.StudentInformation;
 /**
  * A class intended for students to implement their solutions in.
  */
-public class StudentSolutionForExerciseImplementation implements StudentSolutionForExercise {
+public class StudentSolutionImplementation implements StudentSolutionForExercise {
 
     /**
      * Collects and returns information about the student working on solving the

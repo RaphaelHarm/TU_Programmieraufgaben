@@ -1,13 +1,17 @@
-import exercise.StudentInformation;
 import exercise.StudentSolutionForExercise;
+import exercise.StudentInformation;
+
 import exercise.graph.Graph;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
 
 /**
  * A class intended for students to implement their solutions in.
  */
-public class StudentSolutionForExerciseImplementation implements StudentSolutionForExercise {
+public class StudentSolutionImplementation implements StudentSolutionForExercise {
 
     /**
      * Collects and returns information about the student working on solving the

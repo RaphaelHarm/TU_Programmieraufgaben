@@ -16,7 +16,7 @@ public class Task {
             runTestMode = true;
         }
 
-        Exercise exercise = new Exercise(() -> new StudentSolutionForExerciseImplementation());
+        Exercise exercise = new Exercise(() -> new StudentSolutionImplementation());
         exercise.run(runTestMode);
     }
 }

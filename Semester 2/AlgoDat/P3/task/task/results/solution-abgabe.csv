@@ -1,0 +1,6 @@
+#abgabe.csv
+#Raphael
+#Harm
+#12527184
+group,number,problemType,left,right,bottom,top,numPointRQ,numPointNaive,durationInsert,PointAtInsertX,PointAtInsertY,durationRQNaive,durationRQ,durationRQNaive10,durationRQ10,durationRQNaive100,durationRQ100,numPoints
+KDTree_1.txt,1,insert,0,0,0,0,0,0,6068400,168,157,0,0,0,0,0,0,10
