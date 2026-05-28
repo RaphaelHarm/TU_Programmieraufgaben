@@ -1,0 +1,4 @@
+scipy==1.17.1
+matplotlib==3.10.8
+pyqt6==6.10.2
+ipykernel==7.2.0
