@@ -156,14 +156,12 @@ public class StudentSolutionImplementation implements StudentSolutionForExercise
         int[] colorChoices = new int[G.numberOfVertices()];
         Arrays.fill(colorChoices, -1);
 
-        int i = 0;
-
-        while (i < G.numberOfVertices()) {
+        for (int i = 0; i < G.numberOfVertices(); i++) {
             int min = Integer.MAX_VALUE;
             int color = -1, vertex = -1;
 
             for (int v : G.getVertices()) {
-                if (colorChoices[v-1]!=-1)
+                if (colorChoices[v - 1] != -1)
                     continue;
                 for (int c = 0; c < k; c++) {
                     colorSeq[i][0] = v;
@@ -179,14 +177,16 @@ public class StudentSolutionImplementation implements StudentSolutionForExercise
                         vertex = v;
                         min = violations;
                     }
+                    if (min == 0)
+                        break;
                 }
+                if (min == 0)
+                    break;
             }
 
             colorChoices[vertex - 1] = color;
             colorSeq[i][0] = vertex;
             colorSeq[i][1] = color;
-
-            i++;
         }
 
         return countChromaticViolations(G, colorChoices);
